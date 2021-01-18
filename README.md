@@ -74,7 +74,7 @@ Once these matches are passed to the front-end the the user is given more contro
 
 
 
-## INSTRUCTIONS TO RUN PROJECT:
+## Instructions to run project locally:
 
 After unzipping our project release, you will see that our project consists of two typescript projects. 1: das-yarn : our React front end. 2: das-yarn-express-ts : our express backend API server.
 
