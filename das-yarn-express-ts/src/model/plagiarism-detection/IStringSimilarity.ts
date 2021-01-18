@@ -3,7 +3,6 @@
  */
 interface IStringSimilarity {
 
-
     compare(s1: string, s2: string) : number;
 }
 

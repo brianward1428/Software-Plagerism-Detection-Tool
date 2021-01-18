@@ -4,7 +4,7 @@ import ParsedFile from "../../model/plagiarism-detection/ParsedFile";
 import JavaScriptDetectionEngine from "../../model/plagiarism-detection/JavaScriptDetectionEngine";
 import IDetectionEngine from "../../model/plagiarism-detection/IDetectionEngine";
 
-import Project from "../../model/Project";
+import Project from "../../model/plagiarism-detection/Project";
 import * as fs from "fs";
 
 /**
@@ -21,7 +21,7 @@ describe('JS Detection Engine', function () {
 
     it("Testing 1", () => {
 
-        // Well start with parsing the input files.
+        // We'll start with parsing the input files.
         // let file_A : ParsedFile = new ParsedFile("../../model/test-material/jsSample.js","//");
         // let file_B : ParsedFile = new ParsedFile("../../model/test-material/jsSample_2.js","//");
 
@@ -41,8 +41,9 @@ describe('JS Detection Engine', function () {
 
         engine = new JavaScriptDetectionEngine();
         engine.compare(projectA, projectB);
-        //
-        console.log(engine.getSummary());
+
+        let results = engine.getResults();
+        console.log(results);
 
         // console.log("\n CODE RESULTS \n")
         // console.log(engine.getSimResults_Code())

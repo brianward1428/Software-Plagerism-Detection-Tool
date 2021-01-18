@@ -1,5 +1,8 @@
 import ProgrammingLanguageEnum from "./ProgrammingLanguageEnum";
 
+/**
+ * Programming Language object contains the name, comment identifier and keywords for a programming language
+ */
 class ProgrammingLanguage {
     constructor(private name : ProgrammingLanguageEnum, private commentIdentifier : string,
         private keyWords: string[]) {

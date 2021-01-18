@@ -6,7 +6,6 @@ import IPerson from "./IPerson";
  * A user is the user of the system and requires an account creation.
  * A user inherits a first name, last name, and optional email from IPerson.
  * A user has additional fields for userName, password and date joined.
- * 
  */
 interface Iuser extends IPerson {
     userName : string;

@@ -1,3 +1,7 @@
+/**
+ * Enumerated Type for a programming language
+ */
+
 enum ProgrammingLanguageEnum {
     C,
     JAVA,

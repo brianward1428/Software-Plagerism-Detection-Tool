@@ -1,6 +1,10 @@
 {
    "name": "das-yarn-express-ts",
    "version": "0.0.1",
+   "engines": {
+      "yarn": "1.x"
+   },
+   "main": "index.ts",
    "description": "Awesome project developed with TypeORM.",
    "devDependencies": {
       "@types/node": "^14.14.7",
@@ -9,18 +13,20 @@
    },
    "dependencies": {
       "@types/chai": "^4.2.14",
-      "@types/mocha": "^8.0.3",
+      "@types/mocha": "^8.0.4",
       "body-parser": "^1.18.1",
       "chai": "^4.2.0",
+      "cors": "^2.8.5",
+      "estraverse": "^5.2.0",
       "express": "^4.15.4",
-      "fd": "^0.0.3",
-      "fs": "^0.0.1-security",
       "mocha": "^8.2.1",
       "mysql": "^2.14.1",
       "reflect-metadata": "^0.1.10",
+      "ts-mocha": "^8.0.0",
       "typeorm": "0.2.29"
    },
    "scripts": {
-      "start": "ts-node src/index.ts"
+      "start": "ts-node index.ts",
+      "test": "ts-mocha **/*.spec.ts"
    }
 }

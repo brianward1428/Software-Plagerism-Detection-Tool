@@ -1,8 +1,5 @@
-import IMatchFactory from '../IMatchFactory'
-import IPlagiarismMatch from '../IPlagiarismMatch'
-import Project from '../Project'
-import ParsedFile from './ParsedFile'
-import ProgrammingLanguage from './ProgrammingLanguageEnum'
+import Project from './Project'
+import Results from "./Results";
 
 /**
  * Interface that represents a DetectionEngine in the Plagiarism Detector.
@@ -18,18 +15,12 @@ interface IDetectionEngine {
      * @param p1 project 1
      * @param p2 project 2
      */
-    compare(p1: Project, p2 : Project): void;
+    compare(p1: Project, p2 : Project, THRESHOLD: number, ignoreFile: string): void;
 
     /**
-     * Create a new plagiarism match
-     * @param matchFactory a match factory object
+     * Get a results object for the submission.
      */
-    createMatch(matchFactory : IMatchFactory) : IPlagiarismMatch;
-
-    /**
-     * Get String Summary of results.
-     */
-    getSummary(): string;
+    getResults(): Results;
 
 }
 
