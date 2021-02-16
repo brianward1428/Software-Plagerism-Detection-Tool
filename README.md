@@ -55,27 +55,27 @@ The Sorensen-Dice Similarity class implements an IStringSimilarity Interface whi
 
 In future iterations it might be beneficial to use multiple string similarity calculators and average the values, or perhaps give the user control over which calculator(s) they might want to use. As previously mentioned, the string sim calculator will be used to compare each line of project A to each line of project B. There is however some pre-processing to fine-tune these results.
 
-**Pre-Processing**
+**Pre-Processing**  
 Influencing our pre-processing was a CodeMatch research paper that used this same method for pre-processing, which involved splitting any given file into an array of code and an array of comments, so these could be analyzed separately.
 
 As a file is parsed we first determine whether or not a line is a line of code or a line of comment (including block comments). This way can only compare comment lines to comment lines and code lines to code lines. There are also lines which we will want to ignore, i.e lines that consist of only a closing bracket. To do this we are going to check that line contains an alpha character, if not : ignore it.
 
-**Removal of Keywords and the Given Ignore File.**
+**Removal of Keywords and the Given Ignore File.**  
 We might also want to ignore language keywords, as they will certainly increase the similarity value. To do this we simply take in a file which holds the keywords for the specified language, and remove any of these words from the lines before the comparison is executed.
 
 Using this same functionality we are able to offer a parameter for the user to upload a file of words or lines of code that will also be ignored from the matches. This is a particularly nice feature for teachers, as many assignments often come with starter code. In order to get the plagiarism tool to ignore the starter code all the user needs to do is upload a file containing that code.
 
-**Creating Matches**
+**Creating Matches**  
 Now that our lines have been pre-processed, we can continue to compare each line of code and comments respectively. We chose to have our results class hold an array of IMatches, an interface that represents a certain type of match between the two projects. We also implemented an IMatchFactory so that we may easily extend the detectionEngine to create different types of matches. A commentMatch or codeMatch are created if the two compared lines have a simValue greater than the user-given threshold. This gives the user the ability to adjust the sensitivity of the similarity matches to best fit their expectations.
 
 We also included the functionality to combine matches if there were successive matches in a row in both projects. This way the number of matches is decreased and matching snippets of code or comments will all be included as its own match.
 
-**Removal of Matches**
+**Removal of Matches**  
 Once these matches are passed to the front-end the the user is given more control in the ability to keep or discard any of these matches. keeping a match will of course keep the match and discarding the match will be accepting the similarity of the two lines and will allow the presented values to update automatically with that match removed. Our goal in this project was to capture as much information about the similarities of the project and simply display the information to the user to make the final decision on whether or not plagiarism might have taken place. That is why we focused on keeping as much control and customization in the hands of the user.
 
 
 
-## Instructions to run project locally:
+## Instructions to run project locally:  
 
 After unzipping our project release, you will see that our project consists of two typescript projects. 1: das-yarn : our React front end. 2: das-yarn-express-ts : our express backend API server.
 
